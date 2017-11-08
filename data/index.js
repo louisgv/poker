@@ -12,6 +12,26 @@ const data = {
 	"AERO": ["https://media2.giphy.com/media/rtRflhLVzbNWU/100w.gif", "https://media0.giphy.com/media/W8fWP13NK8og/100w.gif", "https://media3.giphy.com/media/tCJfibBuyK1Gw/100w.gif", "https://media0.giphy.com/media/ghiMEnnnIE5xe/100w.gif", "https://media3.giphy.com/media/iRrWh8qeRda92/100w.gif", "https://media0.giphy.com/media/10i8NSey2PFvP2/100w.gif", "https://media3.giphy.com/media/qel5YMmm9Wa1q/100w.gif", "https://media3.giphy.com/media/ZZGxZS56Kb8MU/100w.gif", "https://media3.giphy.com/media/7j2hfyeVcDtf2/100w.gif", "https://media3.giphy.com/media/tTG9nDcehvHHi/100w.gif"]
 }
 
-keys.map((item) => {
-	console.log(item);
-})
+const https = require('https');
+const fs = require('fs');
+
+function Download (item, imageUrl, i) {
+	const dest = './' + item + '/' + i + '.gif';
+
+	const file = fs.createWriteStream(dest);
+
+	return new Promise(function(resolve, reject) {
+		https.get(imageUrl, function(response) {
+			response.pipe(file);
+			file.on('finish', function() {
+				file.close(resolve);
+			});
+		});
+	});
+}
+
+Promise.all(keys.map((item) => {
+	  Promise.all(data[item].map((imageUrl, i)=> {
+				return Download(item, imageUrl, i)
+		}))
+}))

@@ -2,7 +2,7 @@
 async function setup() {
 
 	await Promise.all([
-		warmUpGiphyTable(),
+		// warmUpGiphyTable(),
 		introTutorial()
 	])
 

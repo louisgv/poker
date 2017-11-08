@@ -25,15 +25,20 @@ function getRandomCard(
 		? heroElement
 		: getRandomInArray(CONSTANT.ELEMENTS)
 
+	// REVIEW: When DIFFY is up, better put it here:
+	// const image = point > 0 && point <= CONSTANT.POINT_LIMIT
+	// 	?	GIPHY_TABLE[element][point - 1]
+	// 	: null;
+
 	const image = point > 0 && point <= CONSTANT.POINT_LIMIT
-		?	GIPHY_TABLE[element][point - 1]
+		?	`./data/${element}/${point-1}.gif`
 		: null;
 
 	return new Card({element, point, image},
 		{ info : [`Nullifies ${CONSTANT.ELEMENT_NULLIFICATION[element]}`]});
 }
 
-// Generate a card element 
+// Generate a card element
 function createCardEl(card = new Card(), clickCallback=()=>{}, classname = '') {
 	const cardEl = createElementWithClass('div', 'Card ' + classname);
 
