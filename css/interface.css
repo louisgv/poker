@@ -1,0 +1,86 @@
+#Interface {
+	left: -126px;
+	animation: RetractLeft 0.9s;
+}
+
+#Interface:hover {
+  padding-left: 126px;
+}
+
+#Interface.Show {
+	padding-left: 126px;
+}
+
+.InterfaceButton {
+  text-transform: capitalize;
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  text-decoration: none;
+  color: dodgerblue;
+  background: black;
+  font-family: monospace;
+  font-size: 1.44em;
+  padding-right: 2em;
+}
+
+.InterfaceButton .oi {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: -1em;
+}
+
+.InterfaceButton:hover {
+  background: darkblue;
+  color: white;
+  text-decoration: none;
+  padding-right: 2em;
+}
+
+.InterfaceButton:visited {
+  color: lightgray;
+}
+
+.InterfaceButton:visited:hover {
+  background: darkblue;
+  color: white;
+  text-decoration: none;
+  padding-right: 2em;
+}
+
+.ActiveButton {
+  background: dodgerblue;
+  color: white;
+  padding-right: 2em;
+}
+
+.ActiveButton:visited {
+  color: white;
+}
+
+@media only screen and (max-width: 630px) {
+  #Interface {
+    width: 126px;
+  }
+
+  .InterfaceButton {
+    padding-right: 5em;
+  }
+
+  .InterfaceButton:hover {
+    padding-right: 5em;
+  }
+
+  .InterfaceButton .oi {
+    right: -3em;
+  }
+
+  .ActiveButton {
+    padding-right: 5em;
+  }
+}

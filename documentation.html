@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<link rel="shortcut icon" href="./media/favicon.png">
+	<title>documentation</title>
+
+	<link rel="stylesheet" href="./vendors/open-iconic/font/css/open-iconic.min.css">
+
+	<link rel="stylesheet" href="./css/animation.css" />
+	<link rel="stylesheet" href="./css/global.css" />
+	<link rel="stylesheet" href="./css/interface.css" />
+
+	<link rel="stylesheet" href="./css/documentation.css" />
+</head>
+
+<body>
+
+	<section id="Interface" class="SideBar">
+		<a class="InterfaceButton" href="./index.html" target="_blank">
+			<h3>play</h3>
+			<span class="oi" data-glyph="media-play"></span>
+		</a>
+		<a class="InterfaceButton" href="./rule.html" target="_blank">
+			<h3>rule</h3>
+			<span class="oi" data-glyph="book"></span>
+		</a>
+		<a class="InterfaceButton ActiveButton">
+			<h3>doc</h3>
+			<span class="oi" data-glyph="document"></span>
+		</a>
+	</section>
+
+	<section id="Content">
+		<h1>Documentation</h1>
+		<article class="Notes">
+			<h2>
+				Notes
+			</h2>
+			<hr/>
+			<ul>
+				<li>
+					There is no 3rd-party JavaScript library used.
+				</li>
+				<li>
+					There is a <strong>cheating mechanism</strong> for the player. Simply highlight the score cards from the NPC side to see what element does the NPC have.
+				</li>
+				<li>
+					The NPC has a fake "thinking phase" untill it makes a move. During this time, the cursor will turn into its progressing state.
+				</li>
+				<li>
+					The gifs are cached into a GIPHY_TABLE variable in localstorage, and has an expire cycle of 1 hour. This limits the amount of call necessary to Giphy while also provide optimal reloading experience.
+				</li>
+				<li>
+					The CSS uses the <i>pointer-events</i> attribute which is not supported by the W3 validator, but it works on most modern browser according to <a href="https://caniuse.com/#feat=pointer-events">caniuse</a>
+				</li>
+				<li>
+					The game uses the async/await syntax, thus will only works on browser in this <a target="_blank" href="https://caniuse.com/#feat=fetch">chart</a>
+				</li>
+				<li>
+					The game uses the Promise API, thus will only works on browser in this <a target="_blank" href="https://caniuse.com/promises/embed/agents=desktop">chart</a>
+				</li>
+				<li>
+					The game uses the fetch API, thus will only works on browser in this <a target="_blank" href="https://caniuse.com/promises/embed/agents=desktop">chart</a>
+				</li>
+				<li>
+					The game uses localstorage browser API to cache the state of the tutorial, the game as well as a giphy database.
+				</li>
+				<li>
+					The game uses Array.from ES6 feature, thus will only works on browser in this <a target="_blank" href="http://kangax.github.io/compat-table/es6/#test-Array.from">chart</a>.
+				</li>
+				<li>
+					The logo for the favicon is my design. I created it using <a href="https://github.com/piskelapp/piskel">Piskel</a>
+				</li>
+				<li>
+					The hero cards are my drawings.
+				</li>
+				<li>
+					The card gif images were fetch from Giphy.com, using keywords associated with each element.
+				</li>
+				<li>
+					The works done in this project is authored by lab at mail dot rit dot edu, both CSS and JavaScript.
+				</li>
+				<li> License notice was taken from <a target="_blank" href="https://louisgv.github.io/a-jekyll-blog/">my blog</a>, which is also my design. </li>
+			</ul>
+		</article>
+
+		<article class="References">
+			<h2>
+				References / attributions
+			</h2>
+			<hr/>
+			<ul>
+				<li>
+					Bubblegum Sans -- <a href="https://fonts.google.com/specimen/Bubblegum+Sans">google font</a>
+				</li>
+				<li>
+					Open Iconic -- <a href="https://www.useiconic.com/open">website</a>
+				</li>
+				<li>
+					Giphy -- <a href="https://giphy.com/">website</a>
+				</li>
+
+			</ul>
+		</article>
+
+		<article class="ChangeLog">
+			<h2>
+				Changelog
+			</h2>
+			<hr/>
+			<ul>
+				<li>
+					10/27/2017: Adding tutorial.
+				</li>
+				<li>
+					10/26/2017: Finalize NPC behavior.
+				</li>
+				<li>
+					10/25/2017: Finalize combat scoring mechanism.
+				</li>
+				<li>
+					10/24/2017: Adding rules page, initialize score calculation.
+				</li>
+				<li>
+					10/23/2017:
+					Refactor code and add Giphy API
+				</li>
+				<li>
+					10/20/2017:
+					Adding NPC playing behavior
+				</li>
+				<li>
+					10/19/2017: Init hero choosing modal and nav interface
+				</li>
+				<li>
+					10/16/2017:
+					Initialize card drawing, hand limitting, and playing card
+				</li>
+				<li>
+					10/11/2017: 	Initialize the project
+				</li>
+			</ul>
+		</article>
+
+	</section>
+
+	<footer class="Fixed FlexCenter">
+		<div id="Copyright">
+			<a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html" id="LicenseLogoAnchor">
+				<img src="https://www.gnu.org/graphics/gplv3-88x31.png" class="LicenseLogo" alt="GPLv3" />
+			</a>
+			<span>
+				This work is licensed under a <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+			</span>
+		</div>
+		<button id="HideCopyright">hide</button>
+	</footer>
+
+	<script src="./src/store.js" charset="utf-8"></script>
+	<script src="./src/copyright-hiding.js" charset="utf-8"></script>
+
+</body>
+
+</html>

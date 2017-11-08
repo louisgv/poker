@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, 	user-scalable=no" />
+	<link rel="shortcut icon" href="./media/favicon.png">
+	<title>eau.web</title>
+
+	<link rel="stylesheet" href="./vendors/open-iconic/font/css/open-iconic.min.css">
+
+	<link rel="stylesheet" href="./css/animation.css" />
+	<link rel="stylesheet" href="./css/global.css" />
+	<link rel="stylesheet" href="./css/interface.css" />
+	<link rel="stylesheet" href="./css/info-popup.css" />
+
+	<link rel="stylesheet" href="./css/playing-board.css" />
+	<link rel="stylesheet" href="./css/hero-selection.css" />
+
+	<link rel="stylesheet" href="./css/announce.css" />
+	<link rel="stylesheet" href="./css/tutorial.css" />
+
+
+	<link rel="stylesheet" href="./css/central-deck.css" />
+	<link rel="stylesheet" href="./css/card.css" />
+	<link rel="stylesheet" href="./css/point.css" />
+	<link rel="stylesheet" href="./css/index.css" />
+
+</head>
+
+<body>
+
+	<section id="HeroSelectionOverlay" class="Overlay">
+
+	</section>
+
+	<section id="AnnounceOverlay" class="Overlay">
+		<h1 id="AnnounceText"></h1>
+	</section>
+
+	<section id="InfoPopup" class="SideBar">
+		<a class="InterfaceButton">
+			<span class="oi" data-glyph="flag"></span>
+			<h3 id="InfoText"></h3>
+		</a>
+	</section>
+
+	<section id="Interface" class="SideBar">
+		<a class="InterfaceButton ActiveButton">
+			<h3>play</h3>
+			<span class="oi" data-glyph="media-stop"></span>
+		</a>
+		<a class="InterfaceButton" target="_blank" href="./rule.html">
+			<h3>rule</h3>
+			<span class="oi" data-glyph="book"></span>
+		</a>
+		<a class="InterfaceButton" target="_blank" href="./documentation.html">
+			<h3>doc</h3>
+			<span class="oi" data-glyph="document"></span>
+		</a>
+	</section>
+
+	<section id="GameContainer">
+
+		<div id="NPCSide" class="HalfPlayingBoard">
+			<div class="Hand"></div>
+			<div class="EquipmentLabel">
+				<h2>Equipment Limit : </h2>
+			</div>
+			<div class="Equipment FlexCenter"></div>
+			<div class="Stats"></div>
+		</div>
+
+		<div id="PlayerSide" class="HalfPlayingBoard">
+			<div class="Stats"></div>
+			<div class="EquipmentLabel">
+				<h2>Equipment Limit : </h2>
+			</div>
+			<div class="Equipment FlexCenter"></div>
+			<div class="Hand"></div>
+		</div>
+
+	</section>
+
+	<section id="RightColumn">
+		<div class="WinBadgeContainer">
+			<div id="NPCWins"></div>
+		</div>
+		<div id="CentralDeck">
+			<div class="CentralDeckCard">
+				<h2>Draw card</h2>
+			</div>
+		</div>
+		<div class="WinBadgeContainer">
+			<div id="PlayerWins"></div>
+		</div>
+	</section>
+
+	<footer class="Fixed FlexCenter">
+		<div id="Copyright">
+			<a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html" id="LicenseLogoAnchor">
+				<img src="https://www.gnu.org/graphics/gplv3-88x31.png" class="LicenseLogo" alt="GPLv3" />
+			</a>
+			<span>
+				This work is licensed under a <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+			</span>
+		</div>
+		<button id="HideCopyright">hide</button>
+	</footer>
+
+	<!-- Utility and local storage -->
+	<script src="./src/utils.js" charset="utf-8"></script>
+	<script src="./src/store.js" charset="utf-8"></script>
+	<script src="./src/giphy-table.js" charset="utf-8"></script>
+	<script src="./src/info-popup.js" charset="utf-8"></script>
+	<script src="./src/tutorial.js" charset="utf-8"></script>
+	<script src="./src/announce.js" charset="utf-8"></script>
+	<script src="./src/interface.js" charset="utf-8"></script>
+	<script src="./src/playing-board.js" charset="utf-8"></script>
+
+	<!-- Board section controller -->
+	<script src="./src/card.js" charset="utf-8"></script>
+
+	<!-- Player behavior -->
+	<script src="./src/hero-selection.js" charset="utf-8"></script>
+	<script src="./src/player.js" charset="utf-8"></script>
+	<script src="./src/npc.js" charset="utf-8"></script>
+
+	<!-- Setup script -->
+	<script src="./src/setup.js" charset="utf-8"></script>
+
+	<script src="./src/combat.js" charset="utf-8"></script>
+
+	<script src="./src/game.js" charset="utf-8"></script>
+
+	<!-- Footer controller -->
+	<script src="./src/copyright-hiding.js" charset="utf-8"></script>
+</body>
+
+</html>

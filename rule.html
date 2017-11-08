@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<link rel="shortcut icon" href="./media/favicon.png">
+	<title>rule</title>
+
+	<link rel="stylesheet" href="./vendors/open-iconic/font/css/open-iconic.min.css">
+
+	<link rel="stylesheet" href="./css/animation.css" />
+	<link rel="stylesheet" href="./css/global.css" />
+	<link rel="stylesheet" href="./css/interface.css" />
+
+	<link rel="stylesheet" href="./css/documentation.css" />
+</head>
+
+<body>
+
+	<section id="Interface" class="SideBar">
+		<a class="InterfaceButton" target="_blank" href="./index.html">
+			<h3>play</h3>
+			<span class="oi" data-glyph="media-play"></span>
+		</a>
+		<a class="InterfaceButton ActiveButton">
+			<h3>rule</h3>
+			<span class="oi" data-glyph="book"></span>
+		</a>
+		<a class="InterfaceButton" target="_blank" href="./documentation.html">
+			<h3>doc</h3>
+			<span class="oi" data-glyph="document"></span>
+		</a>
+	</section>
+
+	<section id="Content">
+		<h1>Rule</h1>
+
+		<article>
+			<h2>
+				General
+			</h2>
+			<hr/>
+			<p>
+				Player initially draw a "hero card" that will represent them in the game. They then proceed to play with the NPC.
+			</p>
+
+			<p>
+				The game has 3 rounds, each round has 2 phases: <a href="#Prepare"><b>prepare</b></a> and <a href="#Combat"><b>combat</b></a>. Winner are determined by the score accumulated in the combat phase. Winner of 2 rounds wins the game.
+			</p>
+
+			<p>
+				The game board are split along the x axis, half for player and half for the NPC player. Each half board are then split into 3 rows.
+			</p>
+			<ul>
+				<li>
+					Status: Showing the current elemental points accumulated (accept for ETHER), and the avatar.
+				</li>
+				<li>
+					Equipment: Showing what card the player has played.
+				</li>
+				<li>
+					Hand: Showing what card the player is having.
+				</li>
+			</ul>
+
+		</article>
+
+		<article>
+			<h2>
+				Choosing an avatar
+			</h2>
+			<hr/>
+			<p>
+				There are 5 unique avatars, each represents an alchemy element (Ether, Water, Fire, Aero, Earth). By choosing an avatar, the player is applying a higher probability of drawing cards of the same element in the prepare phase.
+			</p>
+
+			<p>
+				The chosen card will also determine whether if they would be the first to make a move or not in the <a href="#Prepare">prepare phase</a>. In short, it is a 5-ways rock-paper-scisor with the NPC's randomly chosen avatar. The player won if their element beats the NPC's element according to the
+				<a href="#Hierarchy">Hierarchy of Element</a>, or if it is a draw.
+			</p>
+
+		</article>
+
+		<article id="Prepare">
+			<h2>
+				Prepare phase
+			</h2>
+			<hr/>
+			<p>
+				In this phase, each side (player and NPC) take turn either:
+			</p>
+			<ul>
+				<li>
+					Drawing a card from the central deck
+				</li>
+				<li>
+					Playing a card from their hand
+				</li>
+			</ul>
+			<p>
+				No card will be revealed to the other side accept the hero card. The first to fill up their Equipment slots will initiate the <a href="#Combat">combat phase</a>.
+			</p>
+		</article>
+
+		<article id="Combat">
+			<h2>
+				Combat phase
+			</h2>
+			<hr/>
+			<p>
+				In this phase, each side reveal their card, and the game will calculate who has the higher score by a process called <a href="#Nullification">"Nullification"</a>.
+			</p>
+			<p>
+				After the nullification, whoever has the higher combined score win the round and earn a medal. The next round will commence upon which both player will go back to the <a href="#Prepare">prepare phase</a>. The elemental points will keep add-on to what they already accumulated on the previous round.
+			</p>
+		</article>
+
+		<article id="Nullification">
+			<h2>
+				Nullification
+			</h2>
+			<hr/>
+			<p>
+				Nullification is a sequence of point calculation consisting of 3 steps:
+			</p>
+			<ol>
+				<li>
+					<strong> Ether Cancelation: </strong> Both side's ETHER point will be subtracted by the amount of Ether from the side with fewer Ether.
+				</li>
+				<li>
+				 	<strong> Ether Nullification: </strong> The remaining ETHER point will be used to subtract from the element with the highest point on the opposite side.
+				</li>
+				<li>
+					<strong> Element Nullification: </strong> Based on the <a href="#NullTable">Nullification Table</a>, both side's elemental point will be subtracted by the amount of the more powerful element point from the other side.
+				</li>
+			</ol>
+		</article>
+
+		<article id="Hierarchy">
+			<h2>
+				Hierarchy of Element
+			</h2>
+			<hr/>
+			<ul>
+				<li>
+					ETHER beats WATER and FIRE
+				</li>
+				<li>
+					WATER beats FIRE and AERO
+				</li>
+				<li>
+					FIRE beats AERO and EARTH
+				</li>
+				<li>
+					AERO beats EARTH and ETHER
+				</li>
+				<li>
+					EARTH beats ETHER and WATER
+				</li>
+			</ul>
+		</article>
+
+		<article id="NullTable">
+			<h2>
+				Nullification Table
+			</h2>
+			<hr/>
+			<ul>
+				<li>
+					ETHER nullifies itself and everything
+				</li>
+				<li>
+					WATER nullifies FIRE
+				</li>
+				<li>
+					FIRE nullifies AERO
+				</li>
+				<li>
+					AERO nullifies EARTH
+				</li>
+				<li>
+					EARTH nullifies WATER
+				</li>
+			</ul>
+		</article>
+
+	</section>
+
+	<footer class="Fixed FlexCenter">
+		<div id="Copyright">
+			<a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html" id="LicenseLogoAnchor">
+				<img src="https://www.gnu.org/graphics/gplv3-88x31.png" class="LicenseLogo" alt="GPLv3" />
+			</a>
+			<span>
+				This work is licensed under a <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+			</span>
+		</div>
+		<button id="HideCopyright">hide</button>
+	</footer>
+
+	<script src="./src/store.js" charset="utf-8"></script>
+	<script src="./src/copyright-hiding.js" charset="utf-8"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+#HeroSelectionOverlay {
+  background: rgba(0, 0, 0, 0.81);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#HeroSelectionOverlay h1 {
+  text-align: center;
+  padding: 1em;
+  color: white;
+}
+
+#HeroCardContainer {
+  display: flex;
+
+  width: 450px;
+
+  height: 50vh;
+
+  max-width: 80%;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+#HeroCardContainer .Card {
+  margin: 20px;
+	animation: Float 2s ease-in-out infinite alternate;
+}

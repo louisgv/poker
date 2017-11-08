@@ -1,0 +1,33 @@
+#InfoPopup {
+	right: -126px;
+}
+
+#InfoPopup.Show {
+	padding-right: 126px;
+}
+
+#InfoPopup:hover {
+  padding-right: 126px;
+}
+
+#InfoPopup .InterfaceButton {
+	position: absolute;
+	background: dodgerblue;
+	color: white;
+	padding-right: 0;
+	right: 0;
+
+	justify-content: flex-start;
+  align-items: center;
+	padding-left: 2em;
+}
+
+#InfoPopup .InterfaceButton .oi {
+	left: 1em;
+	right: auto;
+}
+
+#InfoText {
+	padding-left: 1em;
+	font-size: 1em;
+}

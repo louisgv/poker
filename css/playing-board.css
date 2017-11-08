@@ -1,0 +1,79 @@
+/*
+	Style related to each half of the playing board
+*/
+.HalfPlayingBoard {
+  /*background: #444;*/
+	color: white;
+  width: 63vw;
+  height: 47.7vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Stats {
+  /*background: white;*/
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Equipment {
+	color: white;
+  /*background: #555;*/
+  width: 100%;
+  height: 40%;
+}
+
+.Hand {
+	color: black;
+  /*background: #999;*/
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.Avatar {
+	color: black;
+  /*background: white;*/
+  height: 100%;
+  width: 20%;
+}
+
+.Avatar .Card {
+  max-width: 100%;
+  animation: Float 2s ease-in-out infinite alternate;
+}
+
+.EquipmentLabel {
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+.EquipmentLabel h2 {
+	padding: 1em;
+	text-shadow: 3px 3px 3px black;
+}
+
+.Equipment .Card {
+  margin: 0 1vw;
+}
+
+.Hand .Card {
+  margin: 0 1vw;
+}
+
+.Point {
+	border-radius: 5px;
+	color: white;
+  background: black;
+  height: 100%;
+  width: 19%;
+}

@@ -1,0 +1,102 @@
+/*
+	Index style
+
+	Mainly style for main id component related to the main game
+*/
+
+body {
+  overflow: hidden;
+	background: #FF512F;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#GameContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#RightColumn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14.4vw;
+  height: 100vh;
+  /*background: #111;*/
+
+	display: flex;
+	flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#PlayerSide {}
+
+#NPCSide {}
+
+#NPCSide .Equipment {
+  pointer-events: none;
+}
+
+#NPCSide .Hand {
+  transform: rotateX(180deg);
+  pointer-events: none;
+}
+
+#NPCSide .Hand .Card {
+  transform: rotateY(180deg);
+}
+
+#NPCSide .Equipment .Card {
+  transition: 1s;
+  transform: rotateY(180deg);
+}
+
+#NPCSide .Equipment.Flip .Card {
+  transform: rotateY(0);
+}
+
+#NPCSide .Equipment.Flip {
+  pointer-events: all;
+}
+
+#NPCSide .Stats .Point {
+	color: black;
+	background: black;
+	transition: 1s;
+}
+
+#NPCSide .Stats.Flip .Point {
+	transform: rotateY(360deg);
+  background: white;
+}
+
+#NPCWins , #PlayerWins {
+	position: absolute;
+	z-index: 9999;
+}
+
+.WinBadgeContainer {
+  margin-left: 1em;
+	height: 1em;
+	display: flex;
+	flex-direction: column;
+}
+
+.WinBadgeContainer .oi {
+	color: white;
+  text-shadow: 3px 3px 3px black;
+  margin: 3px;
+  background: black;
+  border: 3px solid white;
+  border-radius: 100%;
+	padding-top: 2px;
+	padding-left: 1px;
+	padding-right: 1px;
+
+	animation: ZoomIn 1s ease-in;
+}

@@ -1,0 +1,199 @@
+@import url(./font.css);
+
+/* Global style */
+
+body {
+	overflow-x: hidden;
+	margin: 0;
+}
+
+hr {
+	margin-bottom: 2em;
+}
+
+/* Header style */
+h1, h2, h3 {
+	font-family: "Bubblegum Sans", sans-serif;
+	display: block;
+	margin: 0;
+	font-weight: lighter;
+}
+
+h1 {
+	font-size: 2.7em;
+}
+
+h2 {
+	font-size: 1.44em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+ul {
+	list-style-type: circle;
+}
+
+a {
+	opacity: 1;
+
+	transition: 0.36s;
+}
+
+a:link {
+	color: dodgerblue;
+}
+
+a:visited {
+	color: lightgray;
+}
+
+a:visited:hover {
+	color: dodgerblue;
+}
+
+a:hover {
+	color: azure;
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+article {
+	padding-top: 2em;
+}
+
+li {
+  margin-bottom: 0.9em;
+  line-height: 1.35em;
+}
+
+footer {
+	bottom: 0;
+}
+
+#Copyright {
+	color: white;
+	transition: 0.3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 3em;
+	width: 100vw;
+	background: #333;
+	font-family: "Bubblegum Sans", sans-serif;
+}
+
+#LicenseLogoAnchor {
+	background: white;
+	padding: 0.45em;
+	padding-bottom: 0.36em;
+	margin-right: 0.5em;
+	border-radius: 9px;
+}
+
+#CopyrightText {
+	background: white;
+}
+
+.LicenseLogo {
+	height: 1em;
+}
+
+#HideCopyright {
+	position: fixed;
+
+	right: 1em;
+
+	opacity: 0.81;
+
+	background: yellow;
+	color: #333;
+
+	padding: 0.45em;
+	width: 63px;
+	height: 30px;
+	border-radius: 9px;
+	border: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: 0.2s;
+}
+
+#HideCopyright:hover {
+	opacity: 1;
+}
+
+.Fixed {
+	position: fixed;
+}
+
+.Absolute {
+  position: absolute;
+}
+
+.FlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FlexSpaceAround {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.LastAppear {
+	opacity: 0;
+	animation: appear 0.5s ease-in forwards;
+	animation-delay: 4s;
+}
+
+.Overlay {
+	width: 100vw;
+	height: 100vh;
+
+	background: rgba(0, 0, 0, 0.81);
+
+	position: absolute;
+
+	z-index: 999;
+
+	overflow-x: hidden;
+
+	transition: 0.45s;
+}
+
+.SideBar {
+	position: fixed;
+	color: white;
+	background-color: rgba(100, 100, 100, 0.3);
+	width: 144px;
+	height: 100vh;
+	z-index: 1008;
+	transition: 0.45s;
+}
+
+@media only screen and (max-width: 630px){
+	#Top {
+			height: 180px;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+	}
+
+	#Center {
+		top: 270px;
+		width: 90vw;
+		left: 5vw;
+	}
+
+	.BubbleButton {
+		width: 90vw;
+	}
+}
