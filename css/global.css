@@ -2,9 +2,22 @@
 
 /* Global style */
 
+html {
+	user-select: none;
+	-moz-user-select: none;
+}
+
 body {
 	overflow-x: hidden;
 	margin: 0;
+}
+
+* {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
 
 hr {
