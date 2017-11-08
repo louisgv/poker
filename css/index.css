@@ -53,7 +53,7 @@ body {
 
 #NPCSide .Equipment .Card {
   transition: 1s;
-  transform: rotateY(180deg);
+  /*transform: rotateY(180deg);*/
 }
 
 #NPCSide .Equipment.Flip .Card {
